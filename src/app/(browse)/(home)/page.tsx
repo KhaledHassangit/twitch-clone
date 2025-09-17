@@ -1,10 +1,8 @@
-import { UserButton } from "@clerk/nextjs";
 
 export default function Home() {
   return (
   <section className="flex items-center justify-center mt-auto min-h-screen">
-    Twitch Clone
-    <UserButton afterSignOutUrl="/" />
+    <h1> Twitch Clone </h1>
   </section>
   );
 }

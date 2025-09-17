@@ -1,4 +1,4 @@
-import Logo from '@/components/Header/Logo'
+import Logo from '@/components/NavBar/Logo'
 import { Props } from '@/types/types'
 import React from 'react'
 

@@ -21,7 +21,7 @@ const Logo =
             height={height}
           />
         </div>
-        <div className={cn("flex flex-col items-center ", font.className)}>
+        <div className={cn("hidden lg:flex flex-col items-center ", font.className)}>
           <p className={"text-xl font-semibold "}>Gamehub</p>
           <p className={"text-sm text-muted-foreground "}>Let&apos;s  play</p>
         </div>

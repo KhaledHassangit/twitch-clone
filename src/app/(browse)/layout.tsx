@@ -1,14 +1,18 @@
-import NavBar from '@/components/Header/NavBar'
 import { Props } from '@/types/types'
-import React from 'react'
+import Container from '@/util/Container'
+import NavBar from '@/util/NavBar'
+import SideBar from '@/util/SideBar'
 
 const BrowseLayout = ({ children }: Props) => {
   return (
     <>
-    <div className='h-full flex pt-20'>
       <NavBar />
-      {children}
-    </div>
+      <div className='h-full flex pt-20'>
+        <SideBar />
+        <Container>
+          {children}
+        </Container>
+      </div>
     </>
   )
 }
