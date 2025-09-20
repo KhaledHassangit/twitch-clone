@@ -12,6 +12,7 @@
     "@clerk/nextjs": "^6.31.10",
     "@clerk/themes": "^2.4.18",
     "@prisma/client": "^6.16.1",
+    "@radix-ui/react-avatar": "^1.1.10",
     "@radix-ui/react-slot": "^1.2.3",
     "@radix-ui/react-tooltip": "^1.2.8",
     "class-variance-authority": "^0.7.1",
