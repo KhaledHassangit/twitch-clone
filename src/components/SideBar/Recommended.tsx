@@ -1,11 +1,11 @@
 "use client"
-import { User } from '@/generated/prisma'
+
 import { UseSideBar } from '@/store/UseSideBar'
-import React from 'react'
 import UserItem, { UserItemSkeleton } from './UserItem'
+import { User } from '@prisma/client'
 
 const Recommended = ({ data }: { data: User[] }) => {
-
+    console.log(data)
     const { collapsed } = UseSideBar((state) => state)
 
     const showLabel = !collapsed && data?.length > 0

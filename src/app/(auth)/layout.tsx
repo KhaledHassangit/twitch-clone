@@ -6,7 +6,7 @@ const AuthLayout = ({ children }: Props) => {
   return (
     <div className='h-full flex flex-col items-center justify-center space-y-6'>
       <div className='flex items-center flex-col gap-y-4'>
-        <Logo width={80} height={80} />
+        <Logo  />
       </div>
       {children}
     </div>

@@ -6,7 +6,6 @@
 
 generator client {
   provider = "prisma-client-js"
-  output   = "../src/generated/prisma"
 }
 
 datasource db {
@@ -15,11 +14,11 @@ datasource db {
 }
 
 model User {
-  id         String   @id @default(uuid()) @map("_id") @db.ObjectId
-  username   String   @unique
-  imageUrl   String   @db.String
+  id             String   @id @default(uuid())
+  username       String   @unique
+  imageUrl       String
   externalUserId String   @unique
-  bio        String?  @db.String
-  createdAt  DateTime @default(now()) 
-  updatedAt  DateTime @updatedAt
+  bio            String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
 }

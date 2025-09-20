@@ -5,6 +5,7 @@ import { db } from '@/lib/db'
 export async function POST(req: NextRequest) {
     try {
         const evt = await verifyWebhook(req)
+        console.log('Webhook verified:', evt)
         const eventType = evt.type
         if (eventType === 'user.created') {
             await db.user.create({
