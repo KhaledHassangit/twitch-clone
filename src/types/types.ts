@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-object-type */
 import { avatarSizes } from "@/components/SideBar/UserAvatar";
+import { Follow, User } from "@prisma/client";
 import { type VariantProps } from "class-variance-authority";
 
 export interface Props {
@@ -44,4 +45,10 @@ export interface UserPageProps {
 export interface UserActionsProps {
     isFollowing:boolean
     userId:string
+    isBlocked:boolean
+}
+
+
+export interface FollowProps {
+    data:(Follow & {following:User})[]
 }

@@ -5,6 +5,7 @@ import { UseSideBar } from "@/store/UseSideBar"
 import { TooggleButtonSkeleton } from './ToggleButton'
 import { RecommendedSkeleton } from './Recommended'
 import { useIsClient } from 'usehooks-ts'
+import { FollowingSkeleton } from './Following'
 
 const Wrapper = ({ children }: Props) => {
 
@@ -16,6 +17,7 @@ const Wrapper = ({ children }: Props) => {
         <aside className={cn(`fixed left-0 flex flex-col w-60 h-full bg-background border-r
         border-[#2d2e35] z-50`)}>
             <TooggleButtonSkeleton />
+            <FollowingSkeleton />
             <RecommendedSkeleton />
         </aside>
     )
