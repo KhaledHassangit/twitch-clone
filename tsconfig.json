@@ -21,6 +21,7 @@
     "paths": {
       "@/*": ["./src/*"],
       "@/store/*": ["./store/*"],
+      "@/actions/*": ["./actions/*"],
 
     }
   },

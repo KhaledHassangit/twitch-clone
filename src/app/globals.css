@@ -1,18 +1,23 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+
 html,body,
 :root{
 height: 100%;
+
 @apply bg-neutral-900/80
 }
-.hidden-scrollbar::-webkit-scrollbar {
+.hidden-
+scrollbar::-webkit-scrollbar {
   display: none;
 }
+
 .hidden-scrollbar {
   -ms-overflow-style: none;  
   scrollbar-width: none;  
 }
+
 @custom-variant dark (&:is(.dark *));
 
 :root {

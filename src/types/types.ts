@@ -35,3 +35,13 @@ export interface UserAvatarProps extends UserItemProps, VariantProps<typeof avat
 export interface UserAvatarSkeletonProps extends VariantProps<typeof avatarSizes>{
     
 }
+export interface UserPageProps {
+    params:{
+        username:string
+    }
+}
+
+export interface UserActionsProps {
+    isFollowing:boolean
+    userId:string
+}
