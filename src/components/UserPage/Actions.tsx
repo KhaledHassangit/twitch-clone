@@ -83,6 +83,7 @@ const Actions = ({ isFollowing, userId, isBlocked }: UserActionsProps) => {
       <Button disabled={isPending} onClick={onClickBlock}>
         {isBlocked ? "Un Block" : "Block"}
       </Button>
+      
     </>
   )
 }

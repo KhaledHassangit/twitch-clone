@@ -1,29 +1,40 @@
 "use client"
-import { useEffect } from 'react'
-import { UseSideBar } from '@/store/UseSideBar'
-import { Props } from '@/types/types'
-import { cn } from '@/lib/utils'
-import {useMediaQuery} from "usehooks-ts"
+import { useEffect } from "react"
+import { UseSideBar } from "@/store/UseSideBar"
+import { UseCreatorSideBar } from "@/store/UseCreatorSideBar"
+import { Props } from "@/types/types"
+import { cn } from "@/lib/utils"
+import { useMediaQuery } from "usehooks-ts"
 
-const Container = ({ children }: Props) => {
+type ContainerProps = Props & {
+  creator?: boolean
+}
 
-    const { collapsed , onCollapse , onExpand} = UseSideBar()
+const Container = ({ children, creator = false }: ContainerProps) => {
+  const UseStore = creator ? UseCreatorSideBar((state) => state) : UseSideBar((state) => state)
 
-    const matches = useMediaQuery("(max-width:1024px)")
+  const { collapsed, onCollapse, onExpand } = UseStore
 
-        useEffect(() => {
-            if(matches){
-                onCollapse()
-            } else{
-                 onExpand()
-            }
-        }, [matches,onCollapse,onExpand])
-        
-    return (
-        <div className={cn("flex-1",collapsed ? "ml-[70px]" :"ml-[70px] lg:ml-60")}>
-            {children}
-        </div>
-    )
+  const matches = useMediaQuery("(max-width:1024px)")
+
+  useEffect(() => {
+    if (matches) {
+      onCollapse()
+    } else {
+      onExpand()
+    }
+  }, [matches, onCollapse, onExpand])
+
+  return (
+    <div
+      className={cn(
+        "flex-1",
+        collapsed ? "ml-[70px]" : "ml-[70px] lg:ml-60"
+      )}
+    >
+      {children}
+    </div>
+  )
 }
 
 export default Container

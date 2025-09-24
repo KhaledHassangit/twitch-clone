@@ -18,9 +18,7 @@ const Hint = ({
           className="text-black bg-white"
           side={side}
           align={align}>
-
           <p className="font-semibold">{label}</p>
-
         </TooltipContent>
       </Tooltip>
     </TooltipProvider>

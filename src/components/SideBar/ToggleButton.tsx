@@ -23,7 +23,7 @@ const ToggleButton = () => {
     }
       {
         !collapsed && (
-          <div className="p-3 pl-6 mb-2 flex items-center">
+          <div className="p-3 pl-6 mb-2  items-center hidden lg:flex">
             <p>
               For you
             </p>
