@@ -2,9 +2,11 @@
 
 import { UseSideBar } from '@/store/UseSideBar'
 import UserItem, { UserItemSkeleton } from './UserItem'
-import { User } from '@prisma/client'
+import { RecommendedProps } from '@/types/types'
 
-const Recommended = ({ data }: { data: User[] }) => {
+
+const Recommended = ({ data }: RecommendedProps) => {
+
     const { collapsed } = UseSideBar((state) => state)
 
     const showLabel = !collapsed && data?.length > 0
@@ -23,7 +25,7 @@ const Recommended = ({ data }: { data: User[] }) => {
                     data?.map((user) => {
                         return (
                           <UserItem key={user.id} {...user}
-                           isLive={true} />
+                           isLive={user.stream?.isLive as boolean} />
                         )
                     })
                 }

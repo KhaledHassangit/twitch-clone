@@ -28,7 +28,7 @@ const Following = ({ data }: FollowProps) => {
                             key={follow.following.id}
                             username={follow.following.username}
                             imageUrl={follow.following.imageUrl}
-                            isLive={true} />
+                            isLive={follow.following?.stream?.isLive as boolean} />
                     )
                 })}
             </ul>

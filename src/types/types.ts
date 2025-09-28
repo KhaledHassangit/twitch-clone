@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-empty-object-type */
 import { avatarSizes } from "@/components/SideBar/UserAvatar";
-import { Follow, User } from "@prisma/client";
+import { Follow,  User } from "@prisma/client";
 import { type VariantProps } from "class-variance-authority";
 import { LucideIcon } from "lucide-react";
 
@@ -25,7 +25,7 @@ export interface HintProps {
 export interface UserItemProps {
   username: string;
   imageUrl: string;
-  isLive: boolean;
+  isLive: boolean | null;
 }
 
 export interface UserAvatarProps
@@ -48,7 +48,11 @@ export interface UserActionsProps {
 }
 
 export interface FollowProps {
-  data: (Follow & { following: User })[];
+  data: (Follow & {
+    following: User & {
+      stream: { isLive: boolean } | null;
+    };
+  })[];
 }
 
 export interface CreatorLayoutProps {
@@ -68,4 +72,10 @@ export interface ToggleCardProps {
   field: FieldType;
   label: string;
   value: boolean;
+}
+
+export interface RecommendedProps {
+  data: (User & {
+    stream: { isLive: boolean } | null;
+  })[];
 }
